@@ -22,6 +22,7 @@ function App() {
           initialQuery=""
           onSearch={q => {
             setSearch(q);
+            console.log('Search for:', q); // Log the search query
           }}
         />
       </div>
@@ -29,10 +30,13 @@ function App() {
       <div style={{ marginBottom: '60px' }}>
         <h2 style={{ textAlign: 'center' }}>Genre Select</h2>
         <GenreSelect
-          genres={genres}
-          selectedGenre={selectedGenre}
-          onSelect={setSelectedGenre}
-        />
+         genres={genres}
+         selectedGenre={selectedGenre}
+         onSelect={genre => {
+         setSelectedGenre(genre);
+         console.log('Genre selected:', genre); // Log the selected genre
+  }}
+/>
       </div>
     </div>
   );
